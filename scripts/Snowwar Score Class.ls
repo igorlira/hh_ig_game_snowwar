@@ -233,9 +233,8 @@ on showGameScoreWindows(me)
     end if
   end if
   if not windowExists(pTimeWindowId) then
-    if createWindow(pTimeWindowId, "habbo_simple.window") then
+    if createWindow(pTimeWindowId, "sw_timeleft.window") then
       tWndObj = getWindow(pTimeWindowId)
-      tWndObj.merge("sw_timeleft.window")
       if me.getGameSystem().getSpectatorModeFlag() then
         tWndObj.moveTo(26, 36)
       else
