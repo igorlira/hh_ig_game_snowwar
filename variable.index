@@ -1,0 +1,116 @@
+#game
+#variable
+#index
+
+window.button10.class      = ["Common Button Class"]
+
+#bouncing.human.parts.sh=["bl","li","lh","ls","bd","sh","lg","ch","hd","fc","ey","hr","ri","rh","rs"]
+# used to be ri too
+#ACC
+#snowwar.human.parts.sh=["bd","sh","hd","fc","ey","hr"]
+#snowwar.human.parts.sh=["bd","sh","hd","fc","ey","hr","hrb","ha"]
+
+snowwar.gamesystem.id=#snowwar_gamesystem
+snowwar.minigamehandler.class="Snowwar Minigame Handler Extension"
+
+# scoring variables
+
+snowwar.score.hitaward=1
+snowwar.score.killaward=5
+snowwar.health.maximum=4
+snowwar.snowball.maximum=5
+
+# define activity states
+
+ACTIVITY_STATE_INVINCIBLE_AFTER_STUN = 3
+ACTIVITY_STATE_STUNNED = 2
+ACTIVITY_STATE_CREATING = 1
+ACTIVITY_STATE_NORMAL = 0
+
+ACTIVITY_TIMER_INVINCIBLE_AFTER_STUN=60
+ACTIVITY_TIMER_STUNNED=125
+ACTIVITY_TIMER_CREATING=20
+
+# player gameobject variables
+snowwar_gamesystem.player.class="Snowwar Player Gameobject Class"
+
+# avatar variables
+
+snowwar.object_avatar.roomobject.class=["Human Class EX", "Snowwar Avatar Roomobject Class"]
+snowwar.bodypart.class=["Bodypart Class EX", "Snowwar Avatar Roomobject Bodypart Class"]
+
+snowwar.teamcolors.team0=#FF5136
+snowwar.teamcolors.team1=#29C2FF
+snowwar.teamcolors.team2=#FFDD36
+snowwar.teamcolors.team3=#ED28FF
+
+snowwar.object_avatar.collisionshape_radius=1600
+snowwar.object_avatar.height=5000
+snowwar.object_avatar.collisionshape_type=#circle
+snowwar.object_avatar.roomobject.wrapper.class="Snowwar Avatar Roomobject Wrapper Class"
+snowwar.object_avatar.roomobject.hiliter.class="Snowwar Avatar Hiliter Class"
+
+snowwar.object_avatar.subturn_movement=640
+
+
+# snow war human game object class
+snowwar_gamesystem.avatar.class="Snowwar Avatar Gameobject Class"
+
+# snowball variables
+
+QUICK_THROW_DESCENT_POINT=3
+QUICK_THROW_TIME_TO_LIVE=13
+ 
+QUICK_THROW_VELOCITY=2000
+ 
+SHORT_LOB_VELOCITY=2000
+LONG_LOB_VELOCITY=2000
+
+QUICK_THROW_HEIGHT_LEVEL=4000
+SHORT_LOB_HEIGHT_LEVEL=3000
+LONG_LOB_HEIGHT_LEVEL=3000
+
+snowwar.object_snowball.collisionshape_radius=400
+snowwar.object_snowball.collisionshape_type=#circle
+
+snowwar.object_large_snowball.collisionshape_radius=1200
+snowwar.object_large_snowball.collisionshape_type=#circle
+snowwar.object_large_snowball.height=2400
+
+# snow war snowball game object class
+snowwar_gamesystem.snowball.class="Snowwar Snowball Gameobject Class"
+
+# snowball machine variables
+
+# snow war snowball machine game object class
+snowwar_gamesystem.snowball_machine.class="Snowwar Snowballmachine Gameobject Class"
+
+snowwar.object_snowball_machine.roomobject.class=["Active Object Class", "Snowwar Snowballmachine Roomobject Class"]
+snowwar.object_snowball_machine.roomobject.wrapper.class="Snowwar Snowballmachine Roomobject Wrapper Class"
+snowwar.object_snowball_machine.collisionshape_type=#circle
+snowwar.object_snowball_machine.collisionshape_radius=1200
+snowwar.object_snowball_machine.height=2400
+snowwar.object_snowball_machine.maximum_ballcount=5
+
+# snow war object heights!
+
+snowwar.object_block_arch1.height=2300
+snowwar.object_block_arch2.height=2300
+snowwar.object_block_arch3.height=2300
+snowwar.object_block_basic.height=2300
+snowwar.object_block_basic2.height=4600
+snowwar.object_block_basic3.height=6900
+snowwar.object_block_small.height=1150
+snowwar.object_obst_duck.height=2300
+snowwar.object_obst_snowman.height=4600
+snowwar.object_sw_tree1.height=4600
+snowwar.object_sw_tree2.height=4600
+snowwar.object_sw_tree3.height=4600
+snowwar.object_sw_tree4.height=4600                   
+snowwar.object_sw_fence.height=2500
+
+snowwar.object_block_ice.height=2300
+snowwar.object_block_ice2.height=4600
+snowwar.object_block_arch1b.height=6900
+snowwar.object_block_arch2b.height=6900
+snowwar.object_block_arch3b.height=6900

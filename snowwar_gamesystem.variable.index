@@ -1,0 +1,51 @@
+#game
+#variable
+#index
+
+# define processors for game messages
+snowwar_gamesystem.processors = [#engine, #players, #gamefield, #gamemessageparser, #statusbar, #scores, #standardmessageparser, #errormanager]
+
+# ENGINE processor handles creating & discarding game objects.
+
+# define processor classes and messages to listen to
+snowwar_gamesystem.engine.processor.class = [ "Snowwar Engine Class"]
+snowwar_gamesystem.engine.processor.updates = [#create_game_object, #update_game_object, #remove_game_object, #verify_game_object_id_list, #snowwar_event_0, #snowwar_event_1, #snowwar_event_8, #gameend, #world_ready]
+
+# AVATARMANAGER processor handles actions that avatars do.
+
+# define processor classes and messages to listen to
+snowwar_gamesystem.players.processor.class = ["Snowwar AvatarManager Class"]
+snowwar_gamesystem.players.processor.updates = [#set_number_of_teams, #snowwar_event_2, #snowwar_event_3, #snowwar_event_4, #snowwar_event_5, #snowwar_event_7, #snowwar_event_9]
+
+# GAMEFIELD processor handles actions happening in game field.
+
+# define processor classes and messages to listen to
+snowwar_gamesystem.gamefield.processor.class = ["Snowwar GameFieldManager Class"]
+snowwar_gamesystem.gamefield.processor.updates = [#objects_ready, #snowwar_event_11, #snowwar_event_12]
+
+# STATUSBAR processor handles statusbar indicators and buttons.
+
+# define processor classes and messages to listen to
+snowwar_gamesystem.statusbar.processor.class = [ "Snowwar Statusbar Class"]
+snowwar_gamesystem.statusbar.processor.updates = [#update_game_visuals, #statusbar_health_update, #statusbar_ballcount_update, #statusbar_createball_finished, #statusbar_createball_started, #statusbar_createball_stopped, #statusbar_disable_buttons, #gameend, #gamestart]
+
+# SCORES processor displays game scoring and remaining playtime.
+
+# define processor classes and messages to listen to
+snowwar_gamesystem.scores.processor.class = [ "Snowwar Score Class"]
+snowwar_gamesystem.scores.processor.updates = [#update_game_visuals, #set_number_of_teams, #personal_score_updated, #team_score_updated, #gamestart, #gameend, #fullgamestatus_time]
+
+
+# PARSERS and other processors..
+
+#define processor classes and messages to listen to
+snowwar_gamesystem.gamemessageparser.processor.class = ["Snowwar GameMessageParser Class"]
+snowwar_gamesystem.gamemessageparser.processor.updates = [#msgstruct_fullgamestatus, #msgstruct_gamestatus, #msgstruct_gameobjectcreated, #msgstruct_gameobjectdeleted, #msgstruct_gamestart, #msgstruct_gameend, #msgstruct_gamereset, #msgstruct_objects]
+
+#define processor classes and messages to listen to
+snowwar_gamesystem.standardmessageparser.processor.class = ["Gamesystem StandardMessageParser Class"]
+snowwar_gamesystem.standardmessageparser.processor.updates = [#msgstruct_numtickets, #msgstruct_users, #msgstruct_heightmap, #msgstruct_youarespectator, #msgstruct_playerrejoined, #msgstruct_joinfailed, #msgstruct_startfailed]
+
+# define processor classes and messages to listen to
+snowwar_gamesystem.errormanager.processor.class = ["Snowwar Errormanager Class"]
+snowwar_gamesystem.errormanager.processor.updates = [#joinfailed, #startfailed]
