@@ -306,6 +306,18 @@ on eventProcRoomBar(me, tEvent, tSprID, tParam)
       end if
     end if
   end if
+  
+  if tSprID = "game_rules_image" then
+    case tEvent of
+      #mouseUp:
+        return(executeMessage(#ig_show_game_rules))
+      #mouseEnter:
+        return(executeMessage(#setRollOverInfo, getText("interface_icon_game_rules")))
+      #mouseLeave:
+        return(executeMessage(#setRollOverInfo, ""))
+    end case
+  end if
+  
   tRoomInt = getObject("RoomBarProgram")
   if tRoomInt = 0 then
     return(0)
