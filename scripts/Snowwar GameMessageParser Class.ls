@@ -289,6 +289,8 @@ on handle_msgstruct_gamereset(me, tMsg)
       tGameSystem.sendGameSystemEvent(#update_game_object, tGameObject)
     end if
   end repeat
+  tTeamNumber = tConn.GetIntFrom()
+  tGameSystem.sendGameSystemEvent(#set_number_of_teams, tTeamNumber)
   tGameSystem.sendGameSystemEvent(#update_game_visuals)
   return(tGameSystem.sendGameSystemEvent(#gamereset, tdata))
   exit
