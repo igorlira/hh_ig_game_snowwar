@@ -14,9 +14,12 @@ on Refresh(me, tTopic, tdata)
   exit
 end
 
-on handle_msgstruct_objects(me, tdata)
+on handle_msgstruct_objects(me, tMsg)
+  tConn = tMsg.connection
   tList = []
-  tCount = tdata.count(#line)
+  tConn.GetIntFrom()
+  tdata = tMsg.content
+  tCount = the number of lines in tdata
   i = 1
   repeat while i <= tCount
     tLine = tdata.getProp(#line, i)
@@ -50,6 +53,13 @@ on handle_msgstruct_objects(me, tdata)
     end if
     i = 1 + i
   end repeat
+  tRoomThread = getThread(#room)
+  tRoomComponent = tRoomThread.getComponent()
+  if count(tList) > 0 then
+    repeat with tObj in tList
+      tRoomComponent.createPassiveObject(tObj)
+    end repeat
+  end if
   return(me.getGameSystem().getWorld().storeObjects(tList))
   exit
 end
